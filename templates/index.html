@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="footer, address, phone, icons" />
+    <title>University Tuition Viz</title>
+    
+  	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+  	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+  <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  
+  
+  <style>
+        
+
+  h1 {
+    text-align: center;
+    
+  }
+
+body {
+    
+    margin: 2000;
+    background-color:white;
+    }
+
+
+       
+  #buttoname{
+  width: 252px;
+  }
+
+        
+/* #1 {
+
+  width: 100;
+  height: 100;
+} */
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+ }
+ 
+
+        
+  </style>
+
+</head>
+<body>
+  <div class="row">
+    <div class="container">
+        <div class="col-md-12">
+           
+                <h1>Select School for Tuition Visualization</h1>
+                <br>
+                <br>
+                
+               
+          </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container">
+        <div class="col-md-5">
+            <div id = 'button'>
+                <select id = 'buttonname'></select>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+          
+            <input type="button" value="Refresh Page" onClick="window.location.reload()">
+         
+      </div>
+           
+        
+       
+
+          <div class="col-md-3">
+           
+              <form action="https://mikelaifu.github.io/School_Tuition_Viz/tableau_viz/Tablaue_index.html">
+                <input type="submit" value="Go to Tablaue" />
+            </form>
+        </div>
+          
+    </div>
+  </div>
+  
+  
+
+
+
+  <div class="row">
+      <div class="container">
+      <div class="col-md-6">
+        <h5>0-40 Percentile</h5>
+          <div id="1"></div>
+    </div>
+    <div class="col-md-6">
+        <h5>40-60 Percentile</h5>
+        <div id="2"></div>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container">
+  <div class="col-md-6">
+    <h5>60-75 Percentile</h5>
+    <div id="3"></div>
+</div>
+
+<div class="col-md-6">
+  <h5>75-86 Percentile</h5>
+  <div id="4"></div>
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="container">
+    <div class="col-md-6">
+        <h5>86-95 Percentile </h5>
+        <div id="5"></div>
+  </div>
+  
+<div class="col-md-6">
+    <h5>95-100 Percentile</h5>
+    <div id="6"></div>
+   </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+   
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<footer>Copyright 2018: Mike Wu</footer>
+
+    
+</body>
+</html>
