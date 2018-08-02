@@ -46,7 +46,7 @@ def read_data(result1):
     
     dictt1 = {}
     for i in list(df1.columns):
-        dictt1[i] = list(df1)  
+        dictt1[i] = list(df1[i])  
 
     
     

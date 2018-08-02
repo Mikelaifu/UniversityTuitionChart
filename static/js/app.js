@@ -54,13 +54,13 @@ function getRandomColor() {
 function updateLineChart(collegename) {
     
         // Get data from '/sample/<sample>' endpoint (for our metadata table)
-        url = '/line'
+    url = '/line'
     Plotly.d3.json(url, function(error, response) {
         console.log(response.college[collegename]);
         
         var newcolor = getRandomColor()
 
-        var trace1 = {x: response.standerd.Year,
+        var trace1 = {x: response.college.Year,
             y: response.college[collegename], 
             line: {color: newcolor},
            name: collegename};
@@ -94,7 +94,7 @@ function buildLineChart(Percentile, ID) {
         var trace = {
            type: "scatter",
            mode: "lines",
-           x: response.standerd.Year,
+           x: response.college.Year,
            y: response.standerd[Percentile],
            line: {color: '#17BECF'}
 
@@ -111,11 +111,11 @@ function buildLineChart(Percentile, ID) {
             width: 500,
             height: 450,
             margin: {
-              l: 30,
-              r: 30,
-              b: 30,
-              t: 30,
-              pad: 3
+              l: 25,
+              r: 25,
+              b: 25,
+              t: 25,
+            //   pad: 3
             },
             showlegend: true,
             legend: {
