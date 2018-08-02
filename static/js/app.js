@@ -5,7 +5,7 @@ var $buttonname = Plotly.d3.select("#buttonname");
 function BuildDropdown() {
   // Get data from '/names' endpoint
   
-  url = "http://127.0.0.1:5000/dropdown"
+  url = "/dropdown"
   Plotly.d3.json(url, function(error, response) {
       console.log(response)
       $buttonname.on('change', optionChanged);
@@ -54,7 +54,7 @@ function getRandomColor() {
 function updateLineChart(collegename) {
     
         // Get data from '/sample/<sample>' endpoint (for our metadata table)
-        url = 'http://127.0.0.1:5000/line'
+        url = '/line'
     Plotly.d3.json(url, function(error, response) {
         console.log(response.college[collegename]);
         
@@ -86,7 +86,7 @@ function updateLineChart(collegename) {
 function buildLineChart(Percentile, ID) {
 
     // Get data from '/sample/<sample>' endpoint (for our metadata table)
-    url = 'http://127.0.0.1:5000/line'
+    url = '/line'
     Plotly.d3.json(url, function(error, response) {
         console.log(response.standerd[Percentile]);
         
